@@ -1,0 +1,27 @@
+<!-- @dsCard group="Components" viewport="700x300" name="Diagram — on white" subtitle="Light-surface DiagramNode + FlowArrow" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:#fff;font-family:var(--font-core)}a{color:var(--syn-purple)}a:hover{color:var(--syn-purple-light)}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { DiagramNode, FlowArrow } = window.SynopsysSDVEBookDesignSystem_ef1500;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{padding:24,display:'flex',gap:18,alignItems:'center'}}>
+    <div style={{display:'flex',flexDirection:'column',gap:10,width:200}}>
+      <DiagramNode tone="light" icon="cpu" title="Chips & semiconductors"/>
+      <DiagramNode tone="light" icon="camera" title="Sensors"/>
+    </div>
+    <FlowArrow length={56}/>
+    <DiagramNode tone="light" variant="core" icon="car" title="SDV Virtual System" desc="High-fidelity · open · cloud-ready" style={{width:210}}/>
+    <FlowArrow length={56}/>
+    <DiagramNode tone="light" variant="outcome" icon="monitor" title="Explore designs" desc="Evaluate architectures in a safe virtual environment." style={{width:230}}/>
+  </div>
+);
+</script>
+</body></html>

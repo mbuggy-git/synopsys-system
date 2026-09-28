@@ -1,0 +1,13 @@
+<!-- @dsCard group="Brand" viewport="700x170" name="Iconography" subtitle="1.25px-stroke line icons (Lucide), tinted per brand icon palette" -->
+<!DOCTYPE html><html><head><link rel="stylesheet" href="../styles.css"><style>body{margin:0;font-family:var(--font-core);background:var(--ink-1)}a{color:var(--link)}a:hover{color:var(--link-hover)}.t{width:52px;height:52px;border-radius:12px;display:flex;align-items:center;justify-content:center}.t svg{width:26px;height:26px}</style></head><body style="padding:24px 28px;display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+<script>
+const names=['cpu','camera','circuit-board','code','monitor','brain-circuit','clipboard-check','shield-check','gauge','car','cloud-upload','lock','settings','radio-tower','route','refresh-cw'];
+const tones=[['rgba(172,123,234,.12)','#AC7BEA'],['rgba(0,129,254,.1)','#0081FE'],['rgba(255,201,77,.1)','#FFC94D']];
+names.forEach((n,k)=>{
+  const [bg,c]=tones[k%3];
+  const el=document.createElement('span');el.className='t';el.style.background=bg;el.style.color=c;el.style.border='1px solid '+c+'66';
+  document.body.appendChild(el);
+  fetch('../assets/icons/'+n+'.svg').then(r=>r.text()).then(t=>{el.innerHTML=t;});
+});
+</script>
+</body></html>

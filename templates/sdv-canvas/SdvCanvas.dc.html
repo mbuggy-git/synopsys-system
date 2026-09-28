@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<script src="./ds-base.js"></script>
+<style>@keyframes orbitPulse{0%,100%{opacity:.5}50%{opacity:1}}html,body{background:#26232E}</style>
+</helmet>
+<section id="1a" data-screen-label="SDV Overview — Option C3 v2 (canvas)" style="position:absolute;left:60px;top:60px;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;background:radial-gradient(800px 800px at 68% 50%, rgba(172,123,234,.18), transparent 65%), var(--ink-0);font-family:var(--font-core)">
+<div style="position:absolute;left:64px;top:52px;right:64px">
+<x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Eyebrow" hint-size="320px,20px">Synopsys · Software-Defined Vehicles</x-import>
+<h1 style="margin:16px 0 0;font-size:46px;line-height:1.1;font-weight:300;color:#fff">Engineering Complexity Is <span style="font-weight:900">Growing Exponentially</span></h1>
+<p style="margin:12px 0 0;font-size:17px;font-weight:400;line-height:1.4;color:var(--iris)">OEMs Must Embrace Re-Engineering of Systems, Processes, &amp; Products</p>
+</div>
+<div style="position:absolute;left:64px;top:280px;width:520px">
+<p style="margin:0 0 22px;font-size:17px;font-weight:300;line-height:1.6;color:var(--text-muted)">Vehicle software must operate across diverse hardware platforms; integrate with advanced semiconductor architectures; and function reliably across multiple domains such as advanced driver assistance systems (ADAS), infotainment, powertrain, and central compute systems.</p>
+<p style="margin:0 0 22px;font-size:17px;font-weight:300;line-height:1.6;color:var(--text-muted)">To close the gap between traditional, hardware-centric development cycles and the need for continuous software-driven development, original equipment manufacturers (OEMs) must embrace re-engineering of systems, processes, and products.</p>
+<p style="margin:0;font-size:17px;font-weight:300;line-height:1.6;color:var(--text-muted)">Virtual-first development strategies across silicon, software, and systems improve efficiency, scalability, and performance, thus enabling continuous integration and optimization across the entire vehicle lifecycle.</p>
+</div>
+<svg width="1920" height="1080" style="position:absolute;inset:0" aria-hidden="true">
+<defs><linearGradient id="ring" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#AC7BEA"></stop><stop offset=".55" stop-color="#0081FE"></stop><stop offset="1" stop-color="#0081FE"></stop></linearGradient>
+<marker id="arr-iris" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#AC7BEA"></path></marker>
+<marker id="arr-cyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0081FE"></path></marker>
+<marker id="arr-gold" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#FFC94D"></path></marker></defs>
+<path d="M1197.7,857.3 A373,373 0 1 1 1373.5,897.9" fill="none" stroke="url(#ring)" stroke-width="1.5" stroke-dasharray="3 7" opacity=".6"></path>
+<sc-for list="{{ gaps }}" as="g" hint-placeholder-count="3">
+<path d="{{ g.d }}" fill="none" stroke="rgba(172,123,234,.35)" stroke-width="1.5" stroke-dasharray="2 6" stroke-linecap="round"></path>
+</sc-for>
+<sc-for list="{{ arcs }}" as="a" hint-placeholder-count="3">
+<g><path d="{{ a.d }}" fill="none" stroke="{{ a.c }}" stroke-width="2.5" stroke-linecap="round" opacity=".85" marker-end="{{ a.marker }}"></path>
+<path d="{{ a.d }}" fill="none" stroke="{{ a.c }}" stroke-width="10" stroke-linecap="round" opacity=".12"></path>
+</g>
+</sc-for>
+<circle cx="1295" cy="836" r="94" fill="none" stroke="#FFC94D" stroke-width="1.5" stroke-dasharray="3 7" opacity=".55"></circle>
+<path d="M1205.1,808.5 A94,94 0 0 1 1380.2,796.3" fill="none" stroke="#FFC94D" stroke-width="2.5" stroke-linecap="round" opacity=".85" marker-end="url(#arr-gold)"></path>
+<path d="M1380.2,875.7 A94,94 0 0 1 1209.8,875.7" fill="none" stroke="#FFC94D" stroke-width="2.5" stroke-linecap="round" opacity=".85" marker-end="url(#arr-gold)"></path>
+<text x="1295" y="832" text-anchor="middle" fill="#FFC94D" style="font-family:var(--font-core);font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase"><tspan x="1295">Lifecycle</tspan><tspan x="1295" dy="16">loop</tspan></text>
+<sc-for list="{{ arcChars }}" as="ac" hint-placeholder-count="40">
+<text x="{{ ac.x }}" y="{{ ac.y }}" transform="{{ ac.transform }}" text-anchor="middle" fill="{{ ac.c }}" style="font-family:var(--font-core);font-size:13px;font-weight:700">{{ ac.ch }}</text>
+</sc-for>
+<sc-for list="{{ ticks }}" as="t" hint-placeholder-count="10">
+<line x1="{{ t.x1 }}" y1="{{ t.y1 }}" x2="{{ t.x2 }}" y2="{{ t.y2 }}" stroke="{{ t.c }}" stroke-width="2" opacity=".7" style="animation:orbitPulse 3s infinite"></line>
+</sc-for>
+</svg>
+<div style="position:absolute;left:1035px;top:694px;transform:translate(-100%,-50%);display:flex;flex-direction:row-reverse;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="cpu" color="var(--iris)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:right">Chips</span></div>
+<div style="position:absolute;left:994px;top:525px;transform:translate(-100%,-50%);display:flex;flex-direction:row-reverse;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="camera" color="var(--iris)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:right">Sensors</span></div>
+<div style="position:absolute;left:1035px;top:356px;transform:translate(-100%,-50%);display:flex;flex-direction:row-reverse;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="circuit-board" color="var(--iris)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:right">ECUs</span></div>
+<div style="position:absolute;left:1148px;top:223px;transform:translate(-100%,-50%);display:flex;flex-direction:row-reverse;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="code" color="var(--iris)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:right">Software</span></div>
+<div style="position:absolute;left:1554px;top:202px;transform:translate(0%,-50%);display:flex;flex-direction:row;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="monitor" color="var(--cyan)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);line-height:1.3;text-align:left">Explore<br>architectures</span></div>
+<div style="position:absolute;left:1722px;top:410px;transform:translate(0%,-50%);display:flex;flex-direction:row;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="zap" color="var(--cyan)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);line-height:1.3;text-align:left">Ship<br>software early</span></div>
+<div style="position:absolute;left:1718px;top:653px;transform:translate(0%,-50%);display:flex;flex-direction:row;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="brain-circuit" color="var(--cyan)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);line-height:1.3;text-align:left">Train<br>AI behaviors</span></div>
+<div style="position:absolute;left:1586px;top:827px;transform:translate(0%,-50%);display:flex;flex-direction:row;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="shield-check" color="var(--cyan)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);line-height:1.3;text-align:left">Prove<br>safety &amp; security</span></div>
+<div style="position:absolute;left:1231px;top:821px;transform:translate(-100%,-50%);display:flex;flex-direction:row-reverse;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="cloud-upload" color="var(--gold)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:right">OTA updates</span></div>
+<div style="position:absolute;left:1353px;top:828px;transform:translate(0%,-50%);display:flex;flex-direction:row;align-items:center;gap:12px"><span style="width:60px;height:60px;border-radius:14px;flex:none;display:flex;align-items:center;justify-content:center;background:var(--ink-2);border:1px solid var(--line-strong);box-shadow:var(--shadow-card)"><x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Icon" name="database" color="var(--gold)" size="{{ iconSize }}" base="../../assets/icons" hint-size="24px,24px"></x-import></span><span style="font-size:15.5px;font-weight:700;color:var(--text-body);white-space:nowrap;text-align:left">Field data</span></div>
+<div style="position:absolute;left:1367px;top:525px;transform:translate(-50%,-50%);width:430px;height:430px;border-radius:50%;padding:2px;background:var(--grad-neon);box-shadow:0 0 60px rgba(172,123,234,.5)">
+<div style="border-radius:50%;overflow:hidden;background:var(--ink-1);position:relative;width:100%;height:100%;box-sizing:border-box">
+<img src="../../assets/imagery/sensor-topdown.png" alt="Virtual vehicle simulation" style="display:block;width:100%;height:100%;object-fit:cover;object-position:37% center">
+<div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(7,5,15,.05) 18%,rgba(7,5,15,.75) 55%,rgba(7,5,15,.98) 80%)"></div>
+<div style="position:absolute;left:0;right:0;bottom:0;padding:0 36px 40px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center">
+<div style="font-size:28px;font-weight:700;color:#fff">SDV Virtual System</div>
+<div style="display:flex;gap:7px;flex-wrap:wrap;justify-content:center">
+<x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Chip" hint-size="90px,26px">High-fidelity</x-import>
+<x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Chip" hint-size="60px,26px">Open</x-import>
+</div>
+<div style="display:flex;justify-content:center">
+<x-import component-from-global-scope="SynopsysSDVEBookDesignSystem_ef1500.Chip" tone="cyan" hint-size="96px,26px">Cloud-ready</x-import>
+</div>
+</div>
+</div>
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const CX=1367, CY=525, R=373;
+    const raw=[
+      { a:153, ic:'cpu', t:'Chips', kind:'in' },
+      { a:180, ic:'camera', t:'Sensors', kind:'in' },
+      { a:207, ic:'circuit-board', t:'ECUs', kind:'in' },
+      { a:234, ic:'code', t:'Software', kind:'in' },
+      { a:-60, ic:'monitor', t:'Explore architectures', kind:'out' },
+      { a:-18, ic:'zap', t:'Ship software early', kind:'out' },
+      { a:20, ic:'brain-circuit', t:'Train AI behaviors', kind:'out' },
+      { a:54, ic:'shield-check', t:'Prove safety & security', kind:'out' },
+    ];
+    const P=(a,r)=>[CX+r*Math.cos(a*Math.PI/180), CY+r*Math.sin(a*Math.PI/180)];
+    const col=k=>k==='in'?'var(--iris)':k==='out'?'var(--cyan)':'var(--gold)';
+    const hex=k=>k==='in'?'#AC7BEA':k==='out'?'#0081FE':'#FFC94D';
+    const ticks=raw.map(s=>{
+      const [x1,y1]=P(s.a,286),[x2,y2]=P(s.a,340);
+      return { x1:Math.round(x1),y1:Math.round(y1),x2:Math.round(x2),y2:Math.round(y2),c:hex(s.kind) };
+    });
+    const arcD=(rr,b1,b2,sweep)=>{const [x1,y1]=P(b1,rr),[x2,y2]=P(b2,rr);return 'M'+x1.toFixed(1)+','+y1.toFixed(1)+' A'+rr+','+rr+' 0 0 '+sweep+' '+x2.toFixed(1)+','+y2.toFixed(1);};
+    const arcs=[
+      {a1:145,a2:242,c:'#AC7BEA',t:'Silicon & software in',pid:'lp-in',marker:'url(#arr-iris)',rev:false},
+      {a1:-66,a2:62,c:'#0081FE',t:'Engineering outcomes out',pid:'lp-out',marker:'url(#arr-cyan)',rev:false},
+    ].map(a=>{
+      const r=286;
+      const d=arcD(r,a.a1,a.a2,1);
+      return { d, c:a.c, t:a.t, marker:a.marker, mid:(a.a1+a.a2)/2 };
+    });
+    const arcChars=[];
+    for(const a of arcs){
+      const rr=248, stepDeg=2.9, chars=[...a.t.toUpperCase()];
+      const start=a.mid-(chars.length-1)*stepDeg/2;
+      chars.forEach((ch,i)=>{
+        if(ch===' ')return;
+        const ang=start+i*stepDeg;
+        const [x,y]=P(ang,rr);
+        arcChars.push({ ch, x:Math.round(x), y:Math.round(y), c:a.c, transform:'rotate('+Math.round(ang+90)+' '+Math.round(x)+' '+Math.round(y)+')' });
+      });
+    }
+    const gaps=[{b1:246,b2:290},{b1:66,b2:141}].map(g=>({ d:arcD(286,g.b1,g.b2,1) }));
+    return { ticks, arcs, arcChars, gaps, iconSize:24 };
+  }
+}
+</script>
+</body>
+</html>

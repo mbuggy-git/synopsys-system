@@ -1,0 +1,45 @@
+<!-- @dsCard group="Components" viewport="700x360" name="Core" subtitle="Eyebrow, Button, Chip, Stat, IconTile, Panel" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-page);font-family:var(--font-core)}a{color:var(--link)}a:hover{color:var(--link-hover)}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Eyebrow, Button, Chip, Stat, IconTile, Panel } = window.SynopsysSDVEBookDesignSystem_ef1500;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div style={{padding:24,display:'flex',flexDirection:'column',gap:20}}>
+    <div style={{display:'flex',gap:40,alignItems:'flex-end'}}>
+      <Eyebrow>Chapter 1</Eyebrow>
+      <Eyebrow tone="cyan">Data insight</Eyebrow>
+      <Eyebrow tone="light" rule={false}>Synopsys eBook</Eyebrow>
+    </div>
+    <div style={{display:'flex',gap:16,alignItems:'center'}}>
+      <Button>Get started</Button>
+      <Button variant="ghost">See the data</Button>
+      <Button variant="link">Learn more</Button>
+    </div>
+    <div style={{display:'flex',gap:10,alignItems:'center'}}>
+      <Chip>High-fidelity</Chip><Chip>Scalable</Chip><Chip tone="cyan">Cloud-ready</Chip><Chip tone="solid">Open</Chip>
+    </div>
+    <div style={{display:'flex',gap:40,alignItems:'flex-start'}}>
+      <Stat value="3.5×" label="Faster validation" size={52} color="var(--iris)" labelColor="#fff"/>
+      <Stat value="70%" label="Fewer prototypes" size={52} gradient={false} labelColor="#fff"/>
+      <Stat value="3.5×" label="Faster validation" size={52} color="var(--syn-blue)" labelColor="#fff"/>
+      <Stat value="70%" label="Fewer prototypes" size={52} color="#3D9BFF" labelColor="#fff"/>
+      <div style={{display:'flex',gap:12}}>
+        <IconTile name="shield-check"/><IconTile name="brain-circuit" tone="outline"/><IconTile name="wifi" tone="cyan"/>
+      </div>
+      <Panel glow style={{width:220,padding:16}}>
+        <div style={{fontSize:14,fontWeight:700,color:'#fff'}}>From months to days</div>
+        <div style={{fontSize:12.5,color:'var(--text-muted)',marginTop:4}}>Featured panel with neon top rule.</div>
+      </Panel>
+    </div>
+  </div>
+);
+</script>
+</body></html>

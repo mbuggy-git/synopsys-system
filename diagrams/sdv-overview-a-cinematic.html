@@ -1,0 +1,96 @@
+<!-- @dsCard group="Vehicle Diagrams" viewport="1920x1080" name="Option A — Cinematic flow v2" subtitle="Copy rail left, compact system column, loop bar under the diagram" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ink-0);font-family:var(--font-core)}a{color:var(--link)}a:hover{color:var(--link-hover)}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Eyebrow, Chip, IconTile, DiagramNode, FlowArrow, Icon } = window.SynopsysSDVEBookDesignSystem_ef1500;
+const B = '../assets/icons';
+const inputs = [['cpu','Chips'],['camera','Sensors'],['scan-eye','Processors'],['code','Software']];
+const outcomes = [
+  ['monitor','Explore architectures','Compare designs and trade-offs safely, in hours.'],
+  ['zap','Ship software early','Develop and integrate before hardware exists.'],
+  ['brain-circuit','Train AI behaviors','Validate AI/ML against realistic scenarios.'],
+  ['shield-check','Prove safety & security','Test reliability and cybersecurity from day one.'],
+];
+const loop = [['gauge','Diagnostics'],['cloud-upload','OTA updates'],['lock','Security'],['database','Field data']];
+const bodyStyle = {margin:'0 0 22px',fontSize:18,fontWeight:300,lineHeight:1.6,color:'var(--text-muted)'};
+function ColLabel({children}){ return <div style={{fontSize:11,fontWeight:700,letterSpacing:'var(--eyebrow-tracking)',textTransform:'uppercase',color:'var(--iris)',marginBottom:14,whiteSpace:'nowrap'}}>{children}</div>; }
+function App(){
+  return (
+    <div data-screen-label="SDV Overview — Option A v2" style={{width:1920,height:1080,boxSizing:'border-box',padding:'60px 80px 52px',background:'radial-gradient(1200px 600px at 70% -10%, rgba(172,123,234,.16), transparent 60%), var(--ink-0)',display:'flex',flexDirection:'column'}}>
+      <div>
+        <Eyebrow>Software-Defined Vehicles</Eyebrow>
+        <h1 style={{margin:'16px 0 0',fontSize:44,lineHeight:1.08,fontWeight:300,color:'#fff',letterSpacing:'-.01em'}}>Engineering Complexity Is <span style={{fontWeight:900}}>Growing Exponentially</span></h1>
+        <p style={{margin:'10px 0 0',fontSize:17,fontWeight:400,lineHeight:1.4,color:'var(--iris)'}}>OEMs Must Embrace Re-Engineering of Systems, Processes, & Products</p>
+      </div>
+      <div style={{flex:1,display:'grid',gridTemplateColumns:'380px 1fr',gap:80,marginTop:56,minHeight:0,alignItems:'start'}}>
+        <div>
+          <p style={bodyStyle}>Vehicle software must operate across diverse hardware platforms; integrate with advanced semiconductor architectures; and function reliably across multiple domains such as advanced driver assistance systems (ADAS), infotainment, powertrain, and central compute systems.</p>
+          <p style={bodyStyle}>To close the gap between traditional, hardware-centric development cycles and the need for continuous software-driven development, original equipment manufacturers (OEMs) must embrace re-engineering of systems, processes, and products.</p>
+          <p style={{...bodyStyle,marginBottom:0}}>Virtual-first development strategies across silicon, software, and systems improve efficiency, scalability, and performance, thus enabling continuous integration and optimization across the entire vehicle lifecycle.</p>
+        </div>
+        <div style={{display:'flex',flexDirection:'column',gap:22}}>
+          <div style={{display:'grid',gridTemplateColumns:'210px 44px 1fr 44px 396px',alignItems:'center'}}>
+            <div style={{alignSelf:'start'}}>
+              <ColLabel>01 · The system</ColLabel>
+              <div style={{display:'flex',flexDirection:'column',gap:12}}>
+                {inputs.map(([ic,t])=> <DiagramNode key={t} icon={ic} title={t} base={B} style={{padding:'16px 16px'}}/>)}
+              </div>
+            </div>
+            <div style={{display:'flex',justifyContent:'center'}}><FlowArrow length={40}/></div>
+            <div style={{alignSelf:'start'}}>
+              <ColLabel>02 · Simulate everything</ColLabel>
+              <div style={{position:'relative',borderRadius:20,padding:2,background:'var(--grad-neon)',boxShadow:'var(--glow-violet)'}}>
+                <div style={{position:'relative',borderRadius:18,overflow:'hidden',background:'var(--ink-1)'}}>
+                  <img src="../assets/imagery/coast-rear.png" alt="SDV virtual system" style={{display:'block',width:'100%',height:352,objectFit:'cover'}}/>
+                  <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg,rgba(7,5,15,.15) 0%,rgba(7,5,15,.88) 78%)'}}></div>
+                  <div style={{position:'absolute',left:0,right:0,bottom:0,padding:'0 30px 20px',display:'flex',flexDirection:'column',gap:11}}>
+                    <div style={{fontSize:26,fontWeight:700,color:'#fff',letterSpacing:'.01em'}}>SDV Virtual System</div>
+                    <div style={{display:'flex',gap:8,flexWrap:'wrap'}}>
+                      <Chip>High-fidelity</Chip><Chip>Open</Chip><Chip tone="cyan">Cloud-ready</Chip>
+                    </div>
+                    <div style={{fontFamily:'var(--font-mono)',fontSize:12.5,color:'var(--text-muted)',lineHeight:1.6}}>
+                      real-world environments <span style={{color:'var(--cyan)'}}>·</span> V2X connectivity<br/>perception <span style={{color:'var(--cyan)'}}>·</span> AI workloads <span style={{color:'var(--cyan)'}}>·</span> control & decision
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div style={{display:'flex',justifyContent:'center'}}><FlowArrow length={40}/></div>
+            <div style={{alignSelf:'start'}}>
+              <ColLabel>03 · Deliver sooner</ColLabel>
+              <div style={{display:'flex',flexDirection:'column',gap:13}}>
+                {outcomes.map(([ic,t,d])=> <DiagramNode key={t} variant="outcome" icon={ic} title={t} desc={d} base={B}/>)}
+              </div>
+            </div>
+          </div>
+          <div style={{display:'flex',alignItems:'center',gap:20,border:'1px solid var(--line)',borderRadius:'var(--r-pill)',padding:'13px 26px',background:'rgba(22,17,48,.6)'}}>
+            <IconTile name="refresh-cw" size={44} base={B}/>
+            <div style={{fontSize:13,fontWeight:700,letterSpacing:'.18em',textTransform:'uppercase',color:'#fff',whiteSpace:'nowrap'}}>One continuous loop</div>
+            <div style={{flex:1,display:'flex',alignItems:'center',gap:14,justifyContent:'space-between'}}>
+              {loop.map(([ic,t],i)=> (
+                <React.Fragment key={t}>
+                  <span style={{display:'inline-flex',alignItems:'center',gap:10}}>
+                    <Icon name={ic} size={20} color="var(--cyan)" base={B}/>
+                    <span style={{fontSize:14.5,fontWeight:500,color:'var(--text-body)',whiteSpace:'nowrap'}}>{t}</span>
+                  </span>
+                  {i<loop.length-1 && <span style={{flex:1,height:2,background:'var(--grad-neon)',borderRadius:2,opacity:.7,minWidth:24}}></span>}
+                </React.Fragment>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>

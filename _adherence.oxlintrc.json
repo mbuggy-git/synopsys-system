@@ -1,0 +1,371 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/diagram/**",
+              "exports/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Roboto|Roboto Mono))/i]",
+        "message": "Font not provided by the design system. Available: Roboto, Roboto Mono."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|tone|arrow|iconBase|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, tone, arrow, iconBase, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:primary|ghost|link)$/]",
+        "message": "<Button> variant must be one of 'primary' | 'ghost' | 'link'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:dark|light)$/]",
+        "message": "<Button> tone must be one of 'dark' | 'light'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|style|key|ref|className|style|children)$/]",
+        "message": "<Chip> doesn't accept that prop. Declared props: children, tone, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Chip'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:outline|solid|cyan|light)$/]",
+        "message": "<Chip> tone must be one of 'outline' | 'solid' | 'cyan' | 'light'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DiagramNode'] > JSXAttribute > JSXIdentifier[name!=/^(?:icon|title|desc|variant|tone|base|style|key|ref|className|style|children)$/]",
+        "message": "<DiagramNode> doesn't accept that prop. Declared props: icon, title, desc, variant, tone, base, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DiagramNode'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:input|core|outcome)$/]",
+        "message": "<DiagramNode> variant must be one of 'input' | 'core' | 'outcome'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='DiagramNode'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:dark|light)$/]",
+        "message": "<DiagramNode> tone must be one of 'dark' | 'light'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Eyebrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|rule|size|style|key|ref|className|style|children)$/]",
+        "message": "<Eyebrow> doesn't accept that prop. Declared props: children, tone, rule, size, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FlowArrow'] > JSXAttribute > JSXIdentifier[name!=/^(?:direction|length|thickness|style|key|ref|className|style|children)$/]",
+        "message": "<FlowArrow> doesn't accept that prop. Declared props: direction, length, thickness, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='FlowArrow'] > JSXAttribute[name.name='direction'] > Literal[value!=/^(?:right|left|down|up)$/]",
+        "message": "<FlowArrow> direction must be one of 'right' | 'left' | 'down' | 'up'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Icon'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|color|base|style|key|ref|className|style|children)$/]",
+        "message": "<Icon> doesn't accept that prop. Declared props: name, size, color, base, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:name|size|iconSize|tone|base|style|key|ref|className|style|children)$/]",
+        "message": "<IconTile> doesn't accept that prop. Declared props: name, size, iconSize, tone, base, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='IconTile'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:gradient|outline|cyan|light)$/]",
+        "message": "<IconTile> tone must be one of 'gradient' | 'outline' | 'cyan' | 'light'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Panel'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|tone|glow|pad|style|key|ref|className|style|children)$/]",
+        "message": "<Panel> doesn't accept that prop. Declared props: children, tone, glow, pad, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Panel'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:dark|deep|light)$/]",
+        "message": "<Panel> tone must be one of 'dark' | 'deep' | 'light'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|desc|tone|gradient|size|color|labelColor|style|key|ref|className|style|children)$/]",
+        "message": "<Stat> doesn't accept that prop. Declared props: value, label, desc, tone, gradient, size, color, labelColor, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Stat'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:dark|light)$/]",
+        "message": "<Stat> tone must be one of 'dark' | 'light'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Chip": {
+        "replaces": []
+      },
+      "DiagramNode": {
+        "replaces": []
+      },
+      "Eyebrow": {
+        "replaces": []
+      },
+      "FlowArrow": {
+        "replaces": []
+      },
+      "Icon": {
+        "replaces": []
+      },
+      "IconTile": {
+        "replaces": []
+      },
+      "Panel": {
+        "replaces": []
+      },
+      "Stat": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--accent",
+      "--accent-2",
+      "--accent-strong",
+      "--accent-warm",
+      "--brand",
+      "--brand-light",
+      "--card-pad",
+      "--cyan",
+      "--dur",
+      "--ease-out",
+      "--elec-blue",
+      "--eyebrow-tracking",
+      "--font-core",
+      "--font-mono",
+      "--fs-body",
+      "--fs-body-sm",
+      "--fs-caption",
+      "--fs-display",
+      "--fs-eyebrow",
+      "--fs-h1",
+      "--fs-h2",
+      "--fs-h3",
+      "--fs-stat",
+      "--gap-grid",
+      "--glow-cyan",
+      "--glow-violet",
+      "--gold",
+      "--gold-on-light",
+      "--grad-brand",
+      "--grad-depth",
+      "--grad-gold",
+      "--grad-neon",
+      "--grad-neon-v",
+      "--ink-0",
+      "--ink-1",
+      "--ink-2",
+      "--ink-3",
+      "--ink-4",
+      "--iris",
+      "--label-tracking",
+      "--lavender",
+      "--lh-body",
+      "--lh-head",
+      "--lh-tight",
+      "--line",
+      "--line-light",
+      "--line-strong",
+      "--link",
+      "--link-hover",
+      "--magenta",
+      "--page-pad",
+      "--paper",
+      "--paper-2",
+      "--paper-3",
+      "--r-lg",
+      "--r-md",
+      "--r-pill",
+      "--r-sm",
+      "--r-xl",
+      "--r-xs",
+      "--ring-accent",
+      "--shadow-card",
+      "--shadow-card-light",
+      "--sp-1",
+      "--sp-2",
+      "--sp-3",
+      "--sp-4",
+      "--sp-5",
+      "--sp-6",
+      "--sp-7",
+      "--sp-8",
+      "--sp-9",
+      "--surface-card",
+      "--surface-card-light",
+      "--surface-page",
+      "--surface-page-light",
+      "--surface-panel",
+      "--syn-black",
+      "--syn-blue",
+      "--syn-forest",
+      "--syn-gold",
+      "--syn-gray-dark",
+      "--syn-gray-light",
+      "--syn-lime",
+      "--syn-orange",
+      "--syn-purple",
+      "--syn-purple-light",
+      "--syn-red",
+      "--syn-teal",
+      "--syn-white",
+      "--text-body",
+      "--text-body-light",
+      "--text-faint",
+      "--text-inverse",
+      "--text-muted",
+      "--text-muted-light",
+      "--violet",
+      "--w-black",
+      "--w-bold",
+      "--w-light",
+      "--w-med",
+      "--w-reg",
+      "--w-thin"
+    ],
+    "tokenKinds": {
+      "--syn-purple": "color",
+      "--syn-purple-light": "color",
+      "--syn-black": "color",
+      "--syn-white": "color",
+      "--syn-gray-dark": "color",
+      "--syn-gray-light": "color",
+      "--syn-blue": "color",
+      "--syn-teal": "color",
+      "--syn-lime": "color",
+      "--syn-forest": "color",
+      "--syn-gold": "color",
+      "--syn-orange": "color",
+      "--syn-red": "color",
+      "--ink-0": "color",
+      "--ink-1": "color",
+      "--ink-2": "color",
+      "--ink-3": "color",
+      "--ink-4": "color",
+      "--violet": "color",
+      "--iris": "color",
+      "--lavender": "color",
+      "--elec-blue": "color",
+      "--cyan": "color",
+      "--magenta": "color",
+      "--gold": "color",
+      "--gold-on-light": "color",
+      "--paper": "color",
+      "--paper-2": "color",
+      "--paper-3": "color",
+      "--surface-page": "color",
+      "--surface-panel": "color",
+      "--surface-card": "color",
+      "--surface-page-light": "color",
+      "--surface-card-light": "color",
+      "--text-body": "font",
+      "--text-muted": "font",
+      "--text-faint": "font",
+      "--text-body-light": "font",
+      "--text-muted-light": "font",
+      "--text-inverse": "font",
+      "--accent": "color",
+      "--accent-strong": "color",
+      "--accent-2": "color",
+      "--accent-warm": "color",
+      "--brand": "color",
+      "--brand-light": "color",
+      "--line": "color",
+      "--line-strong": "color",
+      "--line-light": "color",
+      "--link": "color",
+      "--link-hover": "color",
+      "--font-core": "font",
+      "--font-mono": "font",
+      "--w-thin": "other",
+      "--w-light": "other",
+      "--w-reg": "other",
+      "--w-med": "other",
+      "--w-bold": "other",
+      "--w-black": "other",
+      "--fs-display": "spacing",
+      "--fs-h1": "spacing",
+      "--fs-h2": "spacing",
+      "--fs-h3": "spacing",
+      "--fs-stat": "spacing",
+      "--fs-body": "spacing",
+      "--fs-body-sm": "spacing",
+      "--fs-caption": "spacing",
+      "--fs-eyebrow": "spacing",
+      "--lh-tight": "other",
+      "--lh-head": "other",
+      "--lh-body": "other",
+      "--eyebrow-tracking": "font",
+      "--label-tracking": "font",
+      "--sp-1": "spacing",
+      "--sp-2": "spacing",
+      "--sp-3": "spacing",
+      "--sp-4": "spacing",
+      "--sp-5": "spacing",
+      "--sp-6": "spacing",
+      "--sp-7": "spacing",
+      "--sp-8": "spacing",
+      "--sp-9": "spacing",
+      "--page-pad": "spacing",
+      "--card-pad": "spacing",
+      "--gap-grid": "spacing",
+      "--r-xs": "spacing",
+      "--r-sm": "spacing",
+      "--r-md": "spacing",
+      "--r-lg": "spacing",
+      "--r-xl": "spacing",
+      "--r-pill": "spacing",
+      "--grad-neon": "color",
+      "--grad-neon-v": "color",
+      "--grad-brand": "color",
+      "--grad-depth": "color",
+      "--grad-gold": "color",
+      "--glow-violet": "shadow",
+      "--glow-cyan": "shadow",
+      "--shadow-card": "shadow",
+      "--shadow-card-light": "shadow",
+      "--ring-accent": "color",
+      "--ease-out": "other",
+      "--dur": "other"
+    },
+    "fontFamilies": [
+      "Roboto",
+      "Roboto Mono"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+:root{
+/* Synopsys corporate palette (brand guide, Mar 2024) */
+--syn-purple:#5A2A82;--syn-purple-light:#7E45AF;--syn-black:#000000;--syn-white:#FFFFFF;
+--syn-gray-dark:#646E81;--syn-gray-light:#B3B4B3;
+--syn-blue:#0081FE;--syn-teal:#00A5A8;--syn-lime:#79A133;--syn-forest:#26874D;
+--syn-gold:#FDB71A;--syn-orange:#E37820;--syn-red:#E23B31;
+/* SDV eBook cinematic palette (from approved moodboard) */
+--ink-0:#07050F;--ink-1:#0D0A1E;--ink-2:#161130;--ink-3:#211A45;--ink-4:#2E2560;
+--violet:#7E45AF;--iris:#AC7BEA;--lavender:#C4B2FF;--elec-blue:var(--syn-blue);--cyan:var(--syn-blue);--magenta:#C84FF0;--gold:#FFC94D;--gold-on-light:#FDB71A; /* elec-blue + cyan retired → Synopsys Blue */
+--paper:#FFFFFF;--paper-2:#F4F3FA;--paper-3:#E9E7F3;
+/* Semantic aliases */
+--surface-page:var(--ink-1);--surface-panel:var(--ink-2);--surface-card:var(--ink-3);
+--surface-page-light:var(--paper);--surface-card-light:var(--paper-2);
+--text-body:#E8E6F4;--text-muted:#A9A4C8;--text-faint:#6F6A92;
+--text-body-light:#1C1830;--text-muted-light:#5B5678;
+--text-inverse:var(--ink-1);
+--accent:var(--iris);--accent-strong:var(--iris);--accent-2:var(--cyan);--accent-warm:var(--gold);
+--brand:var(--syn-purple);--brand-light:var(--syn-purple-light);
+--line:rgba(172,123,234,.22);--line-strong:rgba(172,123,234,.45);--line-light:#DDD9EC;
+--link:var(--iris);--link-hover:var(--cyan);
+}

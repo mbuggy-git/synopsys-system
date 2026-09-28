@@ -1,0 +1,12 @@
+:root{
+--font-core:'Roboto',Arial,sans-serif;
+--font-mono:'Roboto Mono','SFMono-Regular',monospace;
+/* weights */
+--w-thin:100;/* @kind other */--w-light:300;/* @kind other */--w-reg:400;/* @kind other */--w-med:500;/* @kind other */--w-bold:700;/* @kind other */--w-black:900;/* @kind other */
+/* scale (ebook page @1280w) */
+--fs-display:56px;--fs-h1:40px;--fs-h2:30px;--fs-h3:22px;--fs-stat:72px;
+--fs-body:16px;--fs-body-sm:14px;--fs-caption:12px;--fs-eyebrow:11px;
+--lh-tight:1.08;/* @kind other */--lh-head:1.18;/* @kind other */--lh-body:1.55;/* @kind other */
+/* eyebrow: spaced-out uppercase microlabel, signature of the ebook style */
+--eyebrow-tracking:.32em;--label-tracking:.14em;
+}

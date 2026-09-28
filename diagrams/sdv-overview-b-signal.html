@@ -1,0 +1,71 @@
+<!-- @dsCard group="Vehicle Diagrams" viewport="1920x1080" name="Option B — Signal path v2" subtitle="Radically simplified: three beats on one glowing signal line" -->
+<!DOCTYPE html>
+<html><head>
+<link rel="stylesheet" href="../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--ink-1);font-family:var(--font-core)}a{color:var(--link)}a:hover{color:var(--link-hover)}</style>
+</head><body>
+<div id="root"></div>
+<script type="text/babel">
+const { Eyebrow, Icon, Stat } = window.SynopsysSDVEBookDesignSystem_ef1500;
+const B = '../assets/icons';
+const beats = [
+  { n:'01', title:'Model it', lead:'The whole vehicle, virtually.', body:'Chips, sensors, ECUs, and software—captured as one high-fidelity virtual system.', icons:[['cpu','Chips'],['camera','Sensors'],['circuit-board','ECUs'],['code','Software']] },
+  { n:'02', title:'Drive it', lead:'Millions of miles, zero prototypes.', body:'Run it through real-world environments and traffic scenarios using the networks—continuously, in the cloud.', icons:[['globe','Environments'],['wifi','V2X'],['route','Scenarios'],['play','Continuous runs']] },
+  { n:'03', title:'Deliver it', lead:'Enable engineers to develop early.', body:'Explore architectures, integrate software early, train AI, and prove safety—then keep improving the fleet over the air.', icons:[['monitor','Architectures'],['zap','Early software'],['brain-circuit','AI behaviors'],['shield-check','Safety & security']] },
+  { n:'04', title:'Lifecycle', lead:'Continuous lifecycle for faster improvements.', body:'Diagnostics, updates, and field data flow back into the virtual vehicle.', icons:[['gauge','Diagnostics'],['cloud-upload','Updates'],['lock','Security'],['database','Feedback']] },
+];
+function Beat({b, last}){
+  return (
+    <div style={{display:'grid',gridTemplateColumns:'150px 64px 1fr',gap:0,alignItems:'stretch'}}>
+      <div style={{fontSize:88,fontWeight:100,lineHeight:1,color:'var(--ink-4)',textAlign:'right',paddingRight:8,fontVariantNumeric:'tabular-nums'}}>{b.n}</div>
+      <div style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+        <span style={{width:16,height:16,borderRadius:'50%',background:'var(--cyan)',boxShadow:'0 0 16px var(--cyan)',flex:'none',marginTop:12}}></span>
+        {!last && <span style={{width:2,flex:1,background:'var(--grad-neon-v)',opacity:.65}}></span>}
+      </div>
+      <div style={{paddingBottom:last?0:48}}>
+        <div style={{display:'flex',alignItems:'baseline',gap:18}}>
+          <h2 style={{margin:0,fontSize:40,fontWeight:900,color:'#fff',letterSpacing:'-.01em'}}>{b.title}</h2>
+          <span style={{fontSize:19,fontWeight:300,color:'var(--iris)',whiteSpace:'nowrap'}}>{b.lead}</span>
+        </div>
+        <p style={{margin:'10px 0 18px',fontSize:15.5,lineHeight:1.55,color:'var(--text-muted)',maxWidth:560}}>{b.body}</p>
+        <div style={{display:'flex',gap:12}}>
+          {b.icons.map(([ic,t])=> (
+            <span key={t} style={{display:'inline-flex',alignItems:'center',gap:9,border:'1px solid var(--line)',borderRadius:'var(--r-pill)',padding:'8px 16px',background:'rgba(172,123,234,.06)'}}>
+              <Icon name={ic} size={16} color="var(--iris)" base={B}/>
+              <span style={{fontSize:12.5,fontWeight:500,letterSpacing:'.04em',color:'var(--text-body)'}}>{t}</span>
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+function App(){
+  return (
+    <div data-screen-label="SDV Overview — Option B v2" style={{width:1920,height:1080,boxSizing:'border-box',padding:'64px 88px',display:'grid',gridTemplateColumns:'620px 1fr',gap:88,background:'radial-gradient(900px 500px at 0% 100%, rgba(0,129,254,.12), transparent 60%), var(--ink-1)'}}>
+      <div style={{display:'flex',flexDirection:'column'}}>
+          <Eyebrow>Software-Defined Vehicles</Eyebrow>
+        <h1 style={{margin:'18px 0 0',fontSize:42,lineHeight:1.1,fontWeight:300,color:'#fff',letterSpacing:'-.015em'}}>Engineering Complexity Is <span style={{fontWeight:900}}>Growing Exponentially</span></h1>
+        <p style={{margin:'12px 0 0',fontSize:16.5,fontWeight:400,lineHeight:1.45,color:'var(--iris)'}}>OEMs must embrace re-engineering of systems, processes, & products.</p>
+        <p style={{margin:'34px 0 0',fontSize:18,fontWeight:300,lineHeight:1.55,color:'var(--text-muted)'}}>Vehicle software must operate across diverse hardware platforms; integrate with advanced semiconductor architectures; and function reliably across multiple domains such as advanced driver assistance systems (ADAS), infotainment, powertrain, and central compute systems.</p>
+        <p style={{margin:'10px 0 0',fontSize:18,fontWeight:300,lineHeight:1.55,color:'var(--text-muted)'}}>To close the gap between traditional, hardware-centric development cycles and the need for continuous software-driven development, original equipment manufacturers (OEMs) must embrace re-engineering of systems, processes, and products.</p>
+        <p style={{margin:'10px 0 0',fontSize:18,fontWeight:300,lineHeight:1.55,color:'var(--text-muted)'}}>Virtual-first development strategies across silicon, software, and systems improve efficiency, scalability, and performance, thus enabling continuous integration and optimization across the entire vehicle lifecycle.</p>
+        <div style={{position:'relative',marginTop:34,borderRadius:16,overflow:'hidden',border:'1px solid var(--line)'}}>
+          <img src="../assets/imagery/coast-rear.png" alt="Virtual vehicle" style={{display:'block',width:'100%',height:360,objectFit:'cover'}}/>
+          <div style={{position:'absolute',inset:0,background:'linear-gradient(180deg,transparent 40%,rgba(13,10,30,.85))'}}></div>
+          <div style={{position:'absolute',left:20,bottom:16,fontFamily:'var(--font-mono)',fontSize:12,color:'var(--cyan)'}}>sdv.virtual_system</div>
+        </div>
+      </div>
+      <div style={{display:'flex',flexDirection:'column',justifyContent:'center'}}>
+        {beats.map((b,i)=> <Beat key={b.n} b={b} last={i===beats.length-1}/>)}
+      </div>
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+</script>
+</body></html>
